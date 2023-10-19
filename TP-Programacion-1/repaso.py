@@ -240,5 +240,31 @@ if paréntesis_balanceados(cadena):
 else:
     print("Los paréntesis no están balanceados.")
 
+# Inicializamos una lista vacía para almacenar los usuarios
+usuarios = []
+
+while True:
+    usuario = input("Ingrese un nombre de usuario (o 'salir' para salir): ")
+    
+    if usuario.lower() == 'salir':
+        break  # Si el usuario ingresa 'salir', salimos del programa
+    
+    # Verificamos si el usuario ya existe en la lista
+    if usuario in usuarios:
+        print("El usuario ya existe. Por favor, elija otro nombre de usuario.")
+        continue
+    
+    contrasena = input("Ingrese una contraseña: ")
+    
+    # Verificamos si la contraseña cumple con los requisitos
+    if (any(c.isupper() for c in contrasena) and
+        any(c.islower() for c in contrasena) and
+        any(c.isalnum() or not c.isalpha() for c in contrasena) and
+        len(contrasena) >= 12):
+        print("Usuario y contraseña creados exitosamente.")
+        usuarios.append(usuario)
+    else:
+        print("La contraseña no cumple con los requisitos. Debe tener al menos 12 caracteres, una mayúscula, una minúscula y un símbolo especial.")
+
 '''
 
