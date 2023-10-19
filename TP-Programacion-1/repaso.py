@@ -239,7 +239,7 @@ if paréntesis_balanceados(cadena):
     print("Los paréntesis están balanceados.")
 else:
     print("Los paréntesis no están balanceados.")
-
+'''
 # Inicializamos una lista vacía para almacenar los usuarios
 usuarios = []
 
@@ -266,7 +266,7 @@ while True:
     else:
         print("La contraseña no cumple con los requisitos. Debe tener al menos 12 caracteres, una mayúscula, una minúscula y un símbolo especial.")
 
-
+'''
 # Inicializamos un diccionario para almacenar las facturas pendientes
 facturas_pendientes = {}
 
