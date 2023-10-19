@@ -266,5 +266,41 @@ while True:
     else:
         print("La contraseña no cumple con los requisitos. Debe tener al menos 12 caracteres, una mayúscula, una minúscula y un símbolo especial.")
 
+
+# Inicializamos un diccionario para almacenar las facturas pendientes
+facturas_pendientes = {}
+
+while True:
+    print("Opciones:")
+    print("1. Añadir una nueva factura")
+    print("2. Pagar una factura existente")
+    print("3. Terminar")
+    
+    opcion = input("Elija una opción (1/2/3): ")
+    
+    if opcion == '1':
+        numero_factura = input("Ingrese el número de factura: ")
+        coste = float(input("Ingrese el coste de la factura: "))
+        facturas_pendientes[numero_factura] = coste
+    elif opcion == '2':
+        numero_factura = input("Ingrese el número de factura que desea pagar: ")
+        if numero_factura in facturas_pendientes:
+            coste = facturas_pendientes.pop(numero_factura)
+            print(f"La factura {numero_factura} de {coste} ha sido pagada.")
+        else:
+            print("La factura especificada no existe en las facturas pendientes.")
+    elif opcion == '3':
+        break
+    else:
+        print("Opción no válida. Por favor, elija 1, 2 o 3.")
+
+    # Calculamos la cantidad cobrada y pendiente
+    total_cobrado = sum(facturas_pendientes.values())
+    total_pendiente = sum(facturas_pendientes.values())
+    
+    print(f"Cantidad cobrada hasta el momento: {total_cobrado}")
+    print(f"Cantidad pendiente de cobro: {total_pendiente}")
+
+
 '''
 
